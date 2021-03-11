@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  hero-database:
+    container_name: hero-database
+    image: postgres:10
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "hero"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    restart: always
+    ports:
+      - "5432:5432"
