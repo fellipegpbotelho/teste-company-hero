@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from rest_framework import serializers, exceptions
+from rest_framework import exceptions, serializers
 
 from companies.models import Company
 from users.models import User
