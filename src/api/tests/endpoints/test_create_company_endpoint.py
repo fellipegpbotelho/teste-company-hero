@@ -26,7 +26,7 @@ class CreateCompanyEndpointTestCase(APITestCase):
         response = self.client.post(path=self.endpoint, data=self.data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-    def test_enpoint_return_company_created(self) -> None:
+    def test_return_company_created(self) -> None:
         response = self.client.post(path=self.endpoint, data=self.data)
         company_created = response.json()
         self.assertEqual(company_created.get("name"), self.data.get("name"))
