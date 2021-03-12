@@ -6,7 +6,7 @@ from companies.models import Company
 from users.models import User
 
 
-class UserSerializer(serializers.ModelSerializer):
+class CreateUserSerializer(serializers.ModelSerializer):
     company_id = serializers.PrimaryKeyRelatedField(read_only=True)
     email = serializers.EmailField(validators=None)
 
@@ -38,3 +38,9 @@ class UserSerializer(serializers.ModelSerializer):
             company.save()
 
         return user
+
+
+class GetUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "name", "email"]

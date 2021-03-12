@@ -14,7 +14,7 @@ class CreateCompanyUserEndpointTestCase(APITestCase):
             email="company01@email.com",
             cnpj="36.033.000/0001-35"
         )
-        kwargs = {"company_id": self.company.pk}
+        kwargs = {"id": self.company.pk}
         self.endpoint = reverse("api:company.user.create", kwargs=kwargs)
         self.data = {
             "name": "User 01",
@@ -49,7 +49,7 @@ class CreateCompanyUserEndpointTestCase(APITestCase):
     def test_return_status_code_400_if_company_do_not_exists(self) -> None:
         self.endpoint = reverse(
             "api:company.user.create",
-            kwargs={"company_id": 0},
+            kwargs={"id": 0},
         )
         response = self.client.post(path=self.endpoint, data=self.data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -57,7 +57,7 @@ class CreateCompanyUserEndpointTestCase(APITestCase):
     def test_return_error_message_if_company_do_not_exists(self) -> None:
         self.endpoint = reverse(
             "api:company.user.create",
-            kwargs={"company_id": 0},
+            kwargs={"id": 0},
         )
         response = self.client.post(path=self.endpoint, data=self.data)
         error = response.json()

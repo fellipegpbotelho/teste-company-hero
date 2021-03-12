@@ -12,7 +12,7 @@ class CreateCompanyEndpointTestCase(APITestCase):
         self.data = {
             "name": "Company 01",
             "email": "company01@email.com",
-            "cnpj": "123"
+            "cnpj": "36.033.000/0001-35"
         }
 
     def test_create_new_company(self) -> None:
