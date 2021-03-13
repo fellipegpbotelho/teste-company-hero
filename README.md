@@ -3,6 +3,10 @@
 Este projeto tem como objetivo expor alguns endpoints por meio de uma API REST para gerenciar
 empresas e seus usuários.
 
+A versão final da aplicação está disponível em: https://frozen-garden-57080.herokuapp.com/api/companies/
+
+<small>OBS: Pode ser que no primeiro acesso a requisição demore alguns instantes devido ao recurso de <a href="https://blog.heroku.com/app_sleeping_on_heroku" target="_blank">__asleep__</a> do heroku.</small>
+
 ## Tecnologias
 
 As tecnologias usadas na construção da aplicação foram:
@@ -87,15 +91,34 @@ Instale o [Python](https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu
 
 ## Endpoints da aplicação
 
-A aplicação possui quatro endpoints:
+A aplicação possui quatro endpoints para gerenciar as duas entidades:
 
 - `POST /api/companies/`: Cria uma empresa
 
+> Content-Type: application/json
+
 ![POST /api/companies/](./images/endpoint_create_company.png)
+
+```json
+{
+	"name": "Google",
+	"email": "contato@google.com",
+	"cnpj": "06.990.590/0001-23"
+}
+```
 
 - `POST /api/companies/:id/users/`: Cria um usuário
 
+> Content-Type: application/json
+
 ![POST /api/companies/:id/users/](./images/endpoint_create_user.png)
+
+```json
+{
+	"name": "Sundar Pichai",
+	"email": "sundar_pichai@google.com"
+}
+```
 
 - `GET /api/companies/:id/`: Obtém uma empresa
 
