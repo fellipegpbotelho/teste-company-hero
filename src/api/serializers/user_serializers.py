@@ -44,3 +44,22 @@ class GetUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "name", "email"]
+
+
+class GetCompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ["id", "name", "email", "cnpj"]
+
+
+class GetUserAndCompanies(serializers.ModelSerializer):
+    companies = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ["id", "name", "email", "companies"]
+
+    def get_companies(self, obj: User) -> Dict[str, str]:
+        companies = obj.company_set.all()
+        user_companies = GetCompanySerializer(companies, many=True).data
+        return user_companies
