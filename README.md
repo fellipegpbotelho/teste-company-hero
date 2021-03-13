@@ -61,3 +61,23 @@ Instale o [Python](https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu
     ```bash
       python src/manage.py test api
     ```
+
+## Endpoints da aplicação
+
+A aplicação possui quatro endpoints:
+
+- `POST /api/companies/`: Cria uma empresa
+
+![POST /api/companies/](./images/endpoint_create_company.png)
+
+- `POST /api/companies/:id/users/`: Cria um usuário
+
+![POST /api/companies/:id/users/](./images/endpoint_create_user.png)
+
+- `GET /api/companies/:id/`: Obtém uma empresa
+
+![GET /api/companies/:id/](./images/endpoint_get_company.png)
+
+- `GET /api/users/?email=email@email.com`: Obtém um usuário por email
+
+![GET /api/users/?email=email@email.com](./images/endpoint_get_user.png)
