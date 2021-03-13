@@ -1,5 +1,28 @@
 # Teste técnico - Company Hero
 
+Este projeto tem como objetivo expor alguns endpoints por meio de uma API REST para gerenciar
+empresas e seus usuários.
+
+## Tecnologias
+
+As tecnologias usadas na construção da aplicação foram:
+
+- Python
+- Django
+- Django Rest Framework
+- PostgreSQL
+
+## Modelagem dos dados
+
+A aplicação foi modelada com duas entidades:
+
+- Empresa
+- Usuário
+
+As duas entidades se relacionam através de uma relação `M-N`, gerando uma nova tabela pivô entre elas.
+
+![diagram](./images/diagram.png)
+
 ## Como executar o projeto
 
 A aplicação basicamente precisa do funcionamento de duas partes para o funcionamento correto.
